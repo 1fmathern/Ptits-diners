@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#2d6a4f" />
+  <title>P'tits Dîners — Dîners familiaux</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-logo" aria-hidden="true">🥦</span>
+      <div>
+        <h1>P'tits Dîners</h1>
+        <p class="brand-sub">4 pers. (2 ad. + 3 &amp; 5 ans) • Légumes &amp; saison</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button type="button" id="themeToggle" class="icon-btn" aria-label="Basculer le mode sombre" title="Mode sombre / clair">🌙</button>
+    </div>
+  </header>
+
+  <section class="season-bar" aria-label="Saison active">
+    <button type="button" class="season-btn" data-season="Printemps">🌸 Printemps</button>
+    <button type="button" class="season-btn" data-season="Été">☀️ Été</button>
+    <button type="button" class="season-btn" data-season="Automne">🍂 Automne</button>
+    <button type="button" class="season-btn" data-season="Hiver">❄️ Hiver</button>
+  </section>
+
+  <div id="feedbackBanner" class="feedback hidden" role="status"></div>
+
+  <main id="appMain" class="app-main">
+    <section id="tab-planning" class="tab-panel active" aria-label="Planning de la semaine"></section>
+    <section id="tab-recipes" class="tab-panel" aria-label="Recettes"></section>
+    <section id="tab-fridge" class="tab-panel" aria-label="Stock frigo et étagère"></section>
+    <section id="tab-shopping" class="tab-panel" aria-label="Liste de courses"></section>
+    <section id="tab-history" class="tab-panel" aria-label="Suivi et synchronisation"></section>
+  </main>
+
+  <div id="recipeModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="modalTitle">Fiche recette</h2>
+        <button type="button" id="closeModalBtn" class="icon-btn" aria-label="Fermer">✕</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Navigation principale">
+    <button type="button" class="nav-btn active" data-tab="planning">📅<span>Planning</span></button>
+    <button type="button" class="nav-btn" data-tab="recipes">🍲<span>Recettes</span></button>
+    <button type="button" class="nav-btn" data-tab="fridge">🧊<span>Stock</span></button>
+    <button type="button" class="nav-btn" data-tab="shopping">🛒<span>Courses</span></button>
+    <button type="button" class="nav-btn" data-tab="history">📋<span>Suivi</span></button>
+  </nav>
+
+  <script src="./data.js"></script>
+  <script src="./storage.js"></script>
+  <script src="./ocr.js"></script>
+  <script src="./pdf.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
